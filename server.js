@@ -150,6 +150,6 @@ app.get("/api/admin/orders",async(req,res)=>{const key=req.headers.authorization
 app.get("/api/health",async(_req,res)=>{try{await pool.query("SELECT 1");res.json({ok:true,db:true,providers:{stripe:Boolean(process.env.STRIPE_SECRET_KEY),mercadopago:Boolean(process.env.MERCADOPAGO_ACCESS_TOKEN)}});}catch(e){res.status(503).json({ok:false,db:false,error:e.message});}});
 
 app.use(express.static(path.join(__dirname,"public")));
-app.get("*",(_req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get("/{*splat}",(_req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
 
 initDb().then(()=>app.listen(PORT,()=>console.log(`Semilla Brasil: ${BASE_URL}`))).catch(e=>{console.error("No se pudo iniciar la base de datos:",e);process.exit(1);});
