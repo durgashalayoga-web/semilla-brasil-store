@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda en línea de Semilla de Brasil. Compra fácil y solicita tu pedido.">
+  <title>Semilla Brasil | Tienda Natural</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio"><span>🌿</span> Semilla Brasil</a>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <button class="cart-btn" id="openCart" aria-label="Abrir carrito">🛒 <span>Carrito</span> <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">PRODUCTO NATURAL</span>
+          <h1>Semilla de Brasil, <em>una promoción especial.</em></h1>
+          <p>Promoción especial: paquete de 4 meses por <strong>$800 MXN</strong>, con envío incluido. Compra de forma sencilla y recibe atención personalizada.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#tienda">Ver productos</a>
+            <a class="btn ghost" href="#como-comprar">¿Cómo comprar?</a>
+          </div>
+          <div class="trust-row">
+            <span>✓ Compra sencilla</span>
+            <span>✓ Atención personalizada</span>
+            <span>✓ Envío incluido*</span>
+          </div>
+        </div>
+        <div class="product-visual">
+          <div class="leaf leaf-1">🍃</div>
+          <div class="leaf leaf-2">🌿</div>
+          <div class="seed-card">
+            <div class="seed-photo">🌰</div>
+            <span>SEMILLA DE BRASIL</span>
+            <strong>Natural</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tienda">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">NUESTRA TIENDA</span>
+            <h2>Promoción y presentaciones</h2>
+          </div>
+          <p>Selecciona la cantidad que deseas y agrégala al carrito.</p>
+        </div>
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+
+    <section class="steps section" id="como-comprar">
+      <div class="container">
+        <span class="eyebrow">PROCESO</span>
+        <h2>Compra en 3 pasos</h2>
+        <div class="step-grid">
+          <article><span>01</span><h3>Elige</h3><p>Selecciona la presentación que quieres comprar.</p></article>
+          <article><span>02</span><h3>Completa tus datos</h3><p>Indica tu nombre, teléfono y dirección de entrega.</p></article>
+          <article><span>03</span><h3>Confirma</h3><p>Revisamos tu pedido y nos ponemos en contacto contigo para confirmar el envío y el pago.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="info section" id="faq">
+      <div class="container info-grid">
+        <div>
+          <span class="eyebrow">PREGUNTAS FRECUENTES</span>
+          <h2>Información antes de comprar</h2>
+        </div>
+        <div class="faq-list">
+          <details open><summary>¿Cómo hago mi pedido?</summary><p>Agrega productos al carrito, abre el carrito y completa el formulario. El pedido quedará listo para confirmación.</p></details>
+          <details><summary>¿Cómo se realiza el pago?</summary><p>El método de pago se confirma contigo después de recibir el pedido. Sustituye este texto por tus métodos reales.</p></details>
+          <details><summary>¿Hacen envíos?</summary><p>Sí, puedes configurar las zonas, costos y tiempos de envío según tu operación.</p></details>
+          <details><summary>¿El producto es un tratamiento médico?</summary><p>La tienda no presenta la semilla como tratamiento médico ni sustituye la atención de un profesional de la salud. Cualquier uso debe comunicarse de acuerdo con la normativa aplicable.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="brand" href="#inicio"><span>🌿</span> Semilla Brasil</a><p>Semillas seleccionadas y atención personalizada.</p></div>
+      <div><strong>Contacto</strong><p>WhatsApp: <a id="footerWhatsApp" href="https://wa.me/525579823911">55 7982 3911</a><br>Horario: Lun–Sáb, 9:00–18:00</p></div>
+      <div><strong>Importante</strong><p>*Configura aquí tus condiciones reales de envío, cambios y devoluciones antes de publicar.</p></div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart" id="cartPanel" aria-label="Carrito de compras">
+    <div class="cart-head"><h2>Tu carrito</h2><button id="closeCart" class="icon-btn">✕</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom">
+      <div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+      <button class="btn primary full" id="checkoutBtn">Continuar al pedido</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card">
+      <button id="closeModal" class="icon-btn modal-close">✕</button>
+      <span class="eyebrow">FINALIZAR PEDIDO</span>
+      <h2>Datos de entrega</h2>
+      <p class="muted">Completa los datos. Después podrás enviar el pedido por WhatsApp.</p>
+      <form id="orderForm">
+        <label>Nombre completo<input name="name" required autocomplete="name" placeholder="Tu nombre"></label>
+        <label>Teléfono<input name="phone" required autocomplete="tel" placeholder="10 dígitos"></label>
+        <label>Dirección de entrega<textarea name="address" required rows="3" placeholder="Calle, número, colonia, ciudad, estado y C.P."></textarea></label>
+        <label>Notas del pedido<textarea name="notes" rows="2" placeholder="Referencia, horario, etc. (opcional)"></textarea></label>
+        <div class="order-summary" id="orderSummary"></div>
+        <div class="payment-options">
+          <button class="btn primary full" type="button" id="mpButton">Pagar con Mercado Pago</button>
+          <button class="btn stripe-btn full" type="button" id="stripeButton">Pagar con Stripe</button>
+          <button class="btn ghost full" type="button" id="whatsappButton">Enviar pedido por WhatsApp</button>
+        </div>
+        <p class="payment-note">El pago se realiza en la página segura del proveedor. Las claves privadas permanecen en el servidor.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
