@@ -2,10 +2,10 @@
 // CONFIGURACIÓN DE LA TIENDA
 // Los precios reales se validan también en el servidor.
 // =============================
-const productos = [
-  { identificacion: 1, nombre: "1 mes", cantidad: "1 mes", precio: 500, emoji: "🌱", descripción: "Envío incluido." },
-  { identificacion: 2, nombre: "4 meses", cantidad: "4 meses", precio: 800, emoji: "🌿", descripción: "Envío incluido." },
-  { identificacion: 3, nombre: "5 meses", cantidad: "5 meses", precio: 1000, emoji: "🌳", descripción: "Envío incluido." }
+const products = [
+  { id: 1, name: "1 mes", qty: "1 mes", price: 500, emoji: "🌱", description: "Envío incluido." },
+  { id: 2, name: "4 meses", qty: "4 meses", price: 800, emoji: "🌿", description: "Envío incluido." },
+  { id: 3, name: "5 meses", qty: "5 meses", price: 1000, emoji: "🌳", description: "Envío incluido." }
 ];
 
 let cart = JSON.parse(localStorage.getItem("semillaBrasilCart") || "[]");
